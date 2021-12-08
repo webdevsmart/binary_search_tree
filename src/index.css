@@ -1,13 +1,160 @@
-body {
+.tree-section {
+  font-size: 16px;
+  overflow: auto;
+}
+.tree-section * {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+.tree-section ul {
+  display: inline-flex;
+}
+.tree-section li {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0 1em;
+  position: relative;
+}
+.tree-section li ul {
+  margin: 2em 0;
+}
+.tree-section li li:before {
+  border-top: 3px solid white;
+  content: "";
+  display: block;
+  height: 0.0625em;
+  left: -0.03125em;
+  position: absolute;
+  top: -1.03125em;
+  width: 100%;
+}
+.tree-section li li:first-child:before {
+  left: calc(50% - 0.03125em);
+  max-width: calc(50% + 0.0625em);
+}
+.tree-section li li:last-child:before {
+  left: auto;
+  max-width: calc(50% + 0.0625em);
+  right: calc(50% - 0.03125em);
+}
+.tree-section li li:only-child:before {
+  display: none;
+}
+.tree-section li li:only-child > .tf-nc:before,
+.tree-section li li:only-child > .tf-node-content:before {
+  height: 1.0625em;
+  top: -1.0625em;
+}
+.tree-section .tf-nc,
+.tree-section .tf-node-content {
+  border: 0.0625em solid white;
+  display: inline-block;
+  padding: 0.5em 1em;
+  position: relative;
+}
+.tree-section .tf-nc:before,
+.tree-section .tf-node-content:before {
+  top: -1.03125em;
+}
+.tree-section .tf-nc:after,
+.tree-section .tf-nc:before,
+.tree-section .tf-node-content:after,
+.tree-section .tf-node-content:before {
+  border-left: 3px solid white;
+  content: "";
+  display: block;
+  height: 1em;
+  left: calc(50% - 0.03125em);
+  position: absolute;
+  width: 0.0625em;
+}
+.tree-section .tf-nc:after,
+.tree-section .tf-node-content:after {
+  top: calc(100% + 0.03125em);
+}
+.tree-section .tf-nc:only-child:after,
+.tree-section .tf-node-content:only-child:after,
+.tree-section > ul > li > .tf-nc:before,
+.tree-section > ul > li > .tf-node-content:before {
+  display: none;
+}
+.tree-section.tf-gap-sm li {
+  padding: 0 0.6em;
+}
+.tree-section.tf-gap-sm li > .tf-nc:before,
+.tree-section.tf-gap-sm li > .tf-node-content:before {
+  height: 0.6em;
+  top: -0.6em;
+}
+.tree-section.tf-gap-sm li > .tf-nc:after,
+.tree-section.tf-gap-sm li > .tf-node-content:after {
+  height: 0.6em;
+}
+.tree-section.tf-gap-sm li ul {
+  margin: 1.2em 0;
+}
+.tree-section.tf-gap-sm li li:before {
+  top: -0.63125em;
+}
+.tree-section.tf-gap-sm li li:only-child > .tf-nc:before,
+.tree-section.tf-gap-sm li li:only-child > .tf-node-content:before {
+  height: 0.6625em;
+  top: -0.6625em;
+}
+.tree-section.tf-gap-lg li {
+  padding: 0 1.5em;
+}
+.tree-section.tf-gap-lg li > .tf-nc:before,
+.tree-section.tf-gap-lg li > .tf-node-content:before {
+  height: 1.5em;
+  top: -1.5em;
+}
+.tree-section.tf-gap-lg li > .tf-nc:after,
+.tree-section.tf-gap-lg li > .tf-node-content:after {
+  height: 1.5em;
+}
+.tree-section.tf-gap-lg li ul {
+  margin: 3em 0;
+}
+.tree-section.tf-gap-lg li li:before {
+  top: -1.53125em;
+}
+.tree-section.tf-gap-lg li li:only-child > .tf-nc:before,
+.tree-section.tf-gap-lg li li:only-child > .tf-node-content:before {
+  height: 1.5625em;
+  top: -1.5625em;
+}
+.tree-section li.tf-dotted-children .tf-nc:after,
+.tree-section li.tf-dotted-children .tf-nc:before,
+.tree-section li.tf-dotted-children .tf-node-content:after,
+.tree-section li.tf-dotted-children .tf-node-content:before {
+  border-left-style: dotted;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.tf-nc.child-node::after {
+  border: none;
+}
+
+.tree-section li.tf-dotted-children li:before {
+  border-top-style: dotted;
+}
+.tree-section li.tf-dotted-children > .tf-nc:before,
+.tree-section li.tf-dotted-children > .tf-node-content:before {
+  border-left-style: solid;
+}
+.tree-section li.tf-dashed-children .tf-nc:after,
+.tree-section li.tf-dashed-children .tf-nc:before,
+.tree-section li.tf-dashed-children .tf-node-content:after,
+.tree-section li.tf-dashed-children .tf-node-content:before {
+  border-left-style: dashed;
+}
+.tree-section li.tf-dashed-children li:before {
+  border-top-style: dashed;
+}
+.tree-section li.tf-dashed-children > .tf-nc:before,
+.tree-section li.tf-dashed-children > .tf-node-content:before {
+  border-left-style: solid;
 }

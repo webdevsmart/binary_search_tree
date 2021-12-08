@@ -3,7 +3,7 @@ import { BinarySearchTree } from "../utils/BST";
 const bst = new BinarySearchTree();
 
 function Tree(props) {
-  const { data, onRemove } = props;
+  const { data, onRemove, currentNode } = props;
 
   function renderTree(node) {
     return Object.entries(node).map(function ([key, value]) {
@@ -11,7 +11,11 @@ function Tree(props) {
         if (value !== null) {
           return (
             <li key={value.data}>
-              <Tree data={value} onRemove={onRemove} />
+              <Tree
+                data={value}
+                currentNode={currentNode}
+                onRemove={onRemove}
+              />
             </li>
           );
         }
@@ -22,7 +26,11 @@ function Tree(props) {
         if (value !== null) {
           return (
             <li key={value.data}>
-              <Tree data={value} onRemove={onRemove} />
+              <Tree
+                data={value}
+                currentNode={currentNode}
+                onRemove={onRemove}
+              />
             </li>
           );
         }
@@ -35,7 +43,15 @@ function Tree(props) {
 
   return data ? (
     <>
-      <span className="tf-nc" onClick={() => onRemove(data.data)}>
+      <span
+        className={`tf-nc ${
+          data.left === null && data.right === null ? "child-node" : ""
+        } ${Number(currentNode) === Number(data.data) ? "current-node" : ""}`}
+        onClick={() => {
+          console.log(data);
+          onRemove(data.data);
+        }}
+      >
         {data.data}
       </span>
       <ul>{renderTree(data)}</ul>

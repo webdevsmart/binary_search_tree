@@ -6,62 +6,33 @@ export const RootSection = styled.div`
 `;
 
 export const TitleSection = styled.div`
+  font-weight: 900;
+  text-align: center;
   font-size: 50px;
 `;
 
 export const TreeSection = styled.div`
+  padding: 50px 0;
   width: 100%;
-  ul {
-    display: flex;
-    justify-content: center;
+  margin-top: 20px;
+  height: calc(100vh - 87px);
+  background: black;
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
   }
 
-  li {
-    width: 100%;
-    list-style: none;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 0 1em;
-    position: relative;
-    /* :first-child {
-      left: calc(50% - 0.03125em);
-      max-width: calc(50% + 0.0625em);
-    }
-    :not(:first-child) {
-      ::before {
-        border-top: 0.0625em solid #000;
-        content: "";
-        display: block;
-        height: 0.0625em;
-        left: -0.03125em;
-        position: absolute;
-        top: -1.03125em;
-        width: 100%;
-      } 
-    } */
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #00000000;
+    box-shadow: inset 1px 1px 2px transparent;
+    border-radius: 10px;
   }
 
-  span {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    border: none;
-    background: dodgerblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    ::after {
-      top: calc(100% + 0.03125em);
-      border-left: 0.0625em solid #000;
-      content: "";
-      display: block;
-      height: 1em;
-      left: calc(50% - 0.03125em);
-      position: absolute;
-      width: 0.0625em;
-    }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: dodgerblue !important;
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 2px rgb(155 155 155 / 40%);
   }
 `;

@@ -71,27 +71,76 @@ input {
   width: 110px;
 }
 
-.tf-custom {
-  width: 100%;
-}
-
-.tf-custom ul {
+.tree-section ul {
   display: flex;
   justify-content: center;
 }
 
-.tf-custom li {
+.tree-section li {
   width: 100%;
 }
 
-.tf-custom .tf-nc {
-  height: 2rem;
-  width: 2rem;
+.tree-section .tf-nc {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
   border: none;
   background: dodgerblue;
+  /* border: 2px solid white; */
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.2s all;
+}
+
+.tf-nc:active,
+.tf-nc:hover {
+  transform: scale(1.1);
+}
+
+.current-node {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) 400%
+    400% !important;
+
+  /* background-size: ; */
+
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
