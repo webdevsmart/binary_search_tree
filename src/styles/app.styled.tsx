@@ -14,8 +14,8 @@ export const TitleSection = styled.div`
 export const TreeSection = styled.div`
   padding: 50px 0;
   width: 100%;
-  margin-top: 20px;
-  height: calc(100vh - 87px);
+  /* margin-top: 20px; */
+  height: calc(100vh - 68px);
   background: black;
   ::-webkit-scrollbar {
     width: 5px;

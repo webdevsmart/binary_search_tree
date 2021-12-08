@@ -94,11 +94,11 @@ input {
   align-items: center;
   transition: 0.2s all;
 }
-
+/* 
 .tf-nc:active,
-.tf-nc:hover {
+.tf-nc:hover :not(.tf-nc::after) :not(.tf-nc::before) {
   transform: scale(1.1);
-}
+} */
 
 .current-node {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) 400%
