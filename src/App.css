@@ -101,7 +101,7 @@ input {
 } */
 
 .current-node {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) 400%
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #ffff00, #23d5ab) 400%
     400% !important;
 
   /* background-size: ; */
