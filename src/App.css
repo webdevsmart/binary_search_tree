@@ -90,6 +90,7 @@ input {
   border-radius: 50%;
   border: none;
   background: dodgerblue;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;

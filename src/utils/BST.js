@@ -54,13 +54,15 @@ class BinarySearchTree {
     return current.data;
   }
 
-  findMinNode(node) {
+  findMinNode = (node) => {
     if (node.left === null) {
       return node;
     } else {
+      console.log(node);
+      // return node;
       return this.findMinNode(node.left);
     }
-  }
+  };
 
   findMax() {
     let current = this.root;
@@ -74,8 +76,9 @@ class BinarySearchTree {
   }
 
   remove(data) {
+    const { findMinNode } = this;
     function removeData(nodes, datas) {
-      console.log(nodes, datas);
+      // console.log(nodes, datas);
       if (nodes === null) {
         return null;
       } else if (datas < nodes.data) {
@@ -95,7 +98,8 @@ class BinarySearchTree {
           nodes = nodes.left;
           return nodes;
         }
-        const min = this.findMinNode(nodes.right);
+        // console.log(findMinNode(nodes.right));
+        const min = findMinNode(nodes.right);
         nodes.data = min.data;
         nodes.right = removeData(nodes.right, min.data);
         return nodes;
@@ -103,8 +107,8 @@ class BinarySearchTree {
     }
 
     // console.log(this.root, data);
-    // this.root = removeData(this.root, data);
-    console.log(this.root);
+    this.root = removeData(this.root, data);
+    // console.log(this.root);
   }
 
   print() {
