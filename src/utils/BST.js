@@ -75,6 +75,7 @@ class BinarySearchTree {
 
   remove(data) {
     function removeData(nodes, datas) {
+      console.log(nodes, datas);
       if (nodes === null) {
         return null;
       } else if (datas < nodes.data) {
@@ -100,7 +101,10 @@ class BinarySearchTree {
         return nodes;
       }
     }
-    this.root = removeData(this.root, data);
+
+    // console.log(this.root, data);
+    // this.root = removeData(this.root, data);
+    console.log(this.root);
   }
 
   print() {

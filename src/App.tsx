@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Tree from "./components/GenerateTree";
-import { RootSection, TitleSection, TreeSection } from "./styles/app.styled";
+import { RootSection, TitleSection } from "./styles/app.styled";
 import { BinarySearchTree } from "./utils/BST";
 
 const bst = new BinarySearchTree();
@@ -23,17 +23,21 @@ function App() {
     }
   };
 
+  const removeNode = (num: Number) => {
+    bst.remove(num);
+    setRoot((prev: any) => ({ ...prev, ...bst.root }));
+  };
+
   return (
     <RootSection>
       <TitleSection>Binary Search Tree Generator</TitleSection>
-      <TreeSection>
+      <div className="tf-tree tf-custom">
         <ul>
           <li>
-            <Tree data={root} parent={bst.root} />
+            <Tree data={root} parent={bst.root} onRemove={removeNode} />
           </li>
         </ul>
-      </TreeSection>
-      <div>asdasdfasf</div>
+      </div>
     </RootSection>
   );
 }
